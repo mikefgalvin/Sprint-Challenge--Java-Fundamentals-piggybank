@@ -34,7 +34,7 @@ public class CoinController
     @Autowired
     CoinRepo bankRepo;
 
-//    http://localhost:2019/total   Lists current total within piggy bank
+//    http://localhost:2019/total -  Lists current total within piggy bank
     @GetMapping(value = "/total", produces = {"application/json"})
     public ResponseEntity<?> listAll()
     {
@@ -42,8 +42,8 @@ public class CoinController
         bankRepo.findAll().iterator().forEachRemaining(myList::add);
 
 
-        //amount single or plural name
-        //total about piggy bank holds
+        //amount single or plural name - x
+        //total about piggy bank holds  -x
         double total = 0;
         for (Coin e : myList)
         {
